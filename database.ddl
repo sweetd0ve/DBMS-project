@@ -18,7 +18,7 @@ CREATE TABLE pick_up_point (
     storage_duration INT, 
     working_time VARCHAR(20), 
     id_client INT, 
-    FOREIGN KEY (id_client) REFERENCES client(id_client) 
+    FOREIGN KEY (id_client) REFERENCES client_pick_up_point(id_client) 
 ); 
 
  
@@ -29,7 +29,7 @@ CREATE TABLE client (
     phone_number VARCHAR(20), 
     clothes_size INT, 
     id_pick_up_point INT, 
-    FOREIGN KEY (id_pick_up_point) REFERENCES pick_up_point(id_pick_up_point) 
+    FOREIGN KEY (id_pick_up_point) REFERENCES client_pick_up_point(id_pick_up_point) 
 ); 
 
  
@@ -40,7 +40,7 @@ CREATE TABLE order (
     id_client INT, 
     id_product INT, 
     FOREIGN KEY (id_client) REFERENCES client(id_client), 
-    FOREIGN KEY (id_product) REFERENCES product(id_product) 
+    FOREIGN KEY (id_product) REFERENCES product_order(id_product) 
 ); 
 
  
@@ -56,7 +56,7 @@ CREATE TABLE storage (
     working_time VARCHAR(20), 
     capacity INT, 
     id_product INT, 
-    FOREIGN KEY (id_product) REFERENCES product(id_product) 
+    FOREIGN KEY (id_product) REFERENCES product_storage(id_product) 
 ); 
 
  
@@ -75,8 +75,8 @@ CREATE TABLE product (
     id_storage INT, 
     id_order INT, 
     FOREIGN KEY (id_shipper) REFERENCES shipper(id_shipper), 
-    FOREIGN KEY (id_storage) REFERENCES storage(id_storage), 
-    FOREIGN KEY (id_order) REFERENCES order(id_order) 
+    FOREIGN KEY (id_storage) REFERENCES product_storage(id_storage), 
+    FOREIGN KEY (id_order) REFERENCES product_order(id_order) 
 ); 
 
 
@@ -96,14 +96,6 @@ CREATE TABLE parcel (
 ); 
 
  
-CREATE TABLE client_pick_up_point ( 
-    id_client INT, 
-    id_pick_up_point INT, 
-    FOREIGN KEY (id_client) REFERENCES clients(id_client), 
-    FOREIGN KEY (id_pick_up_point) REFERENCES pick_up_point(id_pick_up_point), 
-    CONSTRAINT PK_client_pick_up_point REFERENCES (id_client, id_pick_up_point) 
-); 
-
  
 CREATE TABLE client_pick_up_point ( 
     id_client INT, 
@@ -116,7 +108,8 @@ CREATE TABLE client_pick_up_point (
  
 CREATE TABLE product_order ( 
     id_product INT, 
-    id_order INT, 
+    id_order INT,
+    quantity INT,
     FOREIGN KEY (id_product) REFERENCES product(id_product), 
     FOREIGN KEY (id_order) REFERENCES order(id_order), 
     CONSTRAINT PK_product_order REFERENCES (id_product, id_order) 
@@ -125,7 +118,8 @@ CREATE TABLE product_order (
 
 CREATE TABLE product_storage ( 
     id_product INT, 
-    id_storage INT, 
+    id_storage INT,
+    quantity INT,
     FOREIGN KEY (id_product) REFERENCES product(id_product), 
     FOREIGN KEY (id_storage) REFERENCES storage(id_comment), 
     CONSTRAINT PK_product_storage REFERENCES (id_product, id_comment) 

@@ -6,8 +6,7 @@ CREATE TABLE courier (
     courier_name VARCHAR(40), 
     phone_number VARCHAR(20), 
     transport VARCHAR(20), 
-    id_pick_up_point INT, 
-    FOREIGN KEY (id_pick_up_point) REFERENCES pick_up_point(id_pick_up_point) 
+    id_pick_up_point INT 
 ); 
 
  
@@ -17,8 +16,7 @@ CREATE TABLE pick_up_point (
     payment_types VARCHAR(50), 
     storage_duration INT, 
     working_time VARCHAR(20), 
-    id_client INT, 
-    FOREIGN KEY (id_client) REFERENCES client_pick_up_point(id_client) 
+    id_client INT
 ); 
 
  
@@ -28,8 +26,7 @@ CREATE TABLE client (
     gender VARCHAR(10), 
     phone_number VARCHAR(20), 
     clothes_size INT, 
-    id_pick_up_point INT, 
-    FOREIGN KEY (id_pick_up_point) REFERENCES client_pick_up_point(id_pick_up_point) 
+    id_pick_up_point INT
 ); 
 
  
@@ -39,14 +36,13 @@ CREATE TABLE order (
     discount INT, 
     id_client INT, 
     id_product INT, 
-    FOREIGN KEY (id_client) REFERENCES client(id_client), 
-    FOREIGN KEY (id_product) REFERENCES product_order(id_product) 
+    FOREIGN KEY (id_client) REFERENCES client(id_client)
 ); 
 
  
 CREATE TABLE shipper ( 
     id_shipper INT PRIMARY KEY, 
-    company_name VARCHAR(40), 
+    company_name VARCHAR(40)
 ); 
 
 
@@ -55,8 +51,7 @@ CREATE TABLE storage (
     address VARCHAR(150), 
     working_time VARCHAR(20), 
     capacity INT, 
-    id_product INT, 
-    FOREIGN KEY (id_product) REFERENCES product_storage(id_product) 
+    id_product INT
 ); 
 
  
@@ -74,9 +69,7 @@ CREATE TABLE product (
     id_shipper INT, 
     id_storage INT, 
     id_order INT, 
-    FOREIGN KEY (id_shipper) REFERENCES shipper(id_shipper), 
-    FOREIGN KEY (id_storage) REFERENCES product_storage(id_storage), 
-    FOREIGN KEY (id_order) REFERENCES product_order(id_order) 
+    FOREIGN KEY (id_shipper) REFERENCES shipper(id_shipper)
 ); 
 
 
@@ -100,9 +93,18 @@ CREATE TABLE parcel (
 CREATE TABLE client_pick_up_point ( 
     id_client INT, 
     id_pick_up_point INT, 
-    FOREIGN KEY (id_client) REFERENCES clients(id_client), 
+    FOREIGN KEY (id_client) REFERENCES client(id_client), 
     FOREIGN KEY (id_pick_up_point) REFERENCES pick_up_point(id_pick_up_point), 
     CONSTRAINT PK_client_pick_up_point REFERENCES (id_client, id_pick_up_point) 
+); 
+
+
+CREATE TABLE courier_pick_up_point ( 
+    id_courier INT, 
+    id_pick_up_point INT, 
+    FOREIGN KEY (id_courier) REFERENCES courier(id_courier), 
+    FOREIGN KEY (id_pick_up_point) REFERENCES pick_up_point(id_pick_up_point), 
+    CONSTRAINT PK_courier_pick_up_point REFERENCES (id_courier, id_pick_up_point) 
 ); 
 
  

@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-30T18:16:16.294Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="Mt77O3LVI59RczX9_GtQ" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-30T18:22:59.596Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="fab5ydgRrCSVBQcWFoXm" version="13.10.4" type="github">
   <diagram id="X6rpIG7_2eNNDFmFPTz2" name="Page-1">
     <mxGraphModel dx="1609" dy="1638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -369,7 +369,7 @@
         <mxCell id="Xa--UKp1QR_oUvf-9pJq-138" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="Wi8uEGMEJlB8hErHAgbg-128" target="Wi8uEGMEJlB8hErHAgbg-54" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Wi8uEGMEJlB8hErHAgbg-128" value="Начало времени доставки" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#97D077;strokeWidth=3;" parent="1" vertex="1">
+        <mxCell id="Wi8uEGMEJlB8hErHAgbg-128" value="Время начала доставки" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#97D077;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="630" y="655" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Wi8uEGMEJlB8hErHAgbg-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="Wi8uEGMEJlB8hErHAgbg-129" target="Wi8uEGMEJlB8hErHAgbg-54" edge="1">
@@ -541,7 +541,7 @@
         <mxCell id="qvqFAllWyi4KyymOSZO_-2" value="Доставляет в" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="131.75" y="655" width="96.5" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="Ubknyi0_APASdWst2b-x-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Ubknyi0_APASdWst2b-x-1" target="Wi8uEGMEJlB8hErHAgbg-54">
+        <mxCell id="Ubknyi0_APASdWst2b-x-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="Ubknyi0_APASdWst2b-x-1" target="Wi8uEGMEJlB8hErHAgbg-54" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="610" y="698" />
@@ -550,7 +550,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ubknyi0_APASdWst2b-x-1" value="Конец времени доставки" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#97D077;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="Ubknyi0_APASdWst2b-x-1" value="Время конца доставки" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#97D077;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="576.25" y="697.5" width="133.75" height="30" as="geometry" />
         </mxCell>
       </root>

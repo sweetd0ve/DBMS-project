@@ -5,8 +5,7 @@ CREATE TABLE courier (
     id_courier INT PRIMARY KEY, 
     courier_name VARCHAR(40), 
     phone_number VARCHAR(20), 
-    transport VARCHAR(20), 
-    id_pick_up_point INT 
+    transport VARCHAR(20)
 ); 
 
  
@@ -15,8 +14,7 @@ CREATE TABLE pick_up_point (
     address VARCHAR(150), 
     payment_types VARCHAR(50), 
     storage_duration INT, 
-    working_time VARCHAR(20), 
-    id_client INT
+    working_time VARCHAR(20)
 ); 
 
  
@@ -24,9 +22,7 @@ CREATE TABLE client (
     id_client INT PRIMARY KEY, 
     client_name VARCHAR(40), 
     gender VARCHAR(10), 
-    phone_number VARCHAR(20), 
-    clothes_size INT, 
-    id_pick_up_point INT
+    phone_number VARCHAR(20)
 ); 
 
  
@@ -35,7 +31,6 @@ CREATE TABLE order (
     sum FLOAT, 
     discount INT, 
     id_client INT, 
-    id_product INT, 
     FOREIGN KEY (id_client) REFERENCES client(id_client)
 ); 
 
@@ -51,7 +46,6 @@ CREATE TABLE storage (
     address VARCHAR(150), 
     working_time VARCHAR(20), 
     capacity INT, 
-    id_product INT
 ); 
 
  
@@ -67,8 +61,6 @@ CREATE TABLE product (
     price FLOAT, 
     origin_country VARCHAR(20), 
     id_shipper INT, 
-    id_storage INT, 
-    id_order INT, 
     FOREIGN KEY (id_shipper) REFERENCES shipper(id_shipper)
 ); 
 
